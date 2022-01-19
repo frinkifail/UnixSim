@@ -1,16 +1,18 @@
-#!catecoin lib #source_code
-#@import libs
+# catecoin lib
+# import libs
 import random
 import time
-#@variables
+# variables
 priceLow = random.uniform(0.01,1984.91)
 priceHigh = random.uniform(priceLow, 2984.91)
-#@functions
+# functions
 
 def checkPrice():
     global priceLow
     global priceHigh
     print(random.uniform(priceLow,priceHigh))
+    
+# main loop
 
 while True:
     checkPrice()
