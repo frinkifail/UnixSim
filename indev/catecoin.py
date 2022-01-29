@@ -1,3 +1,9 @@
+"""
+oh my god
+fuck this library
+I don't know how to code
+"""
+
 # catecoin lib
 # import libs
 import random
