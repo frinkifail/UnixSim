@@ -1,3 +1,5 @@
+# This file contains utility functinos for reading and creating recs.
+
 recNames = []
 recCodeContents = []
 
@@ -7,10 +9,7 @@ def createRec(recType, recName):
     recName_ = recName
     recNames.append(recName_)
     recCodeContent = input("New Rec File - %s (1 line limit):\n" % recName_)
-    if recCodeContent == "puw oruoqeiwrunwioeu ounuwe uio ru orc uoqrweu ":
-        print("funny")
-    else:
-        print("indevelopment kik")
+    print("indevelopment kekw")
     recCodeContents.append(recCodeContent)
     
 def viewRecContent(recType):
