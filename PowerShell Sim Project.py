@@ -1,6 +1,8 @@
-# import time
+import time
 import rec
 echo = True
+serverName = "not started"
+serverPort = "not started"
 
 while True:
     commandLinePrompt = "python/unixSim> "
@@ -11,8 +13,7 @@ while True:
         print("UnixSim v0.1.8-nightly\nMade by Frinkifail & contributors")
     elif user_command == "help":
         print("Avalible commands are:\nabout - about\nexit - exit\nhelp - help\necho - say word\nechoOff & echoOn - turn \"echo:\" prompt off/on\nrec create - create rec\nrec view names - view names of recs\nrec view contents - view contents of recs")
-        print("ls/dir - list fake (simulated) directory\ncd <directory name>- cycles through simulated directories")
-        print("self-explainatory")
+        print("ls/dir - list fake (simulated) directory\ncd <directory name>- cycles through simulated directories\nserver - \"server help\" for more info")
     elif user_command == "echo":
         if echo is True:
             echoMessage = input("echo:\n")
@@ -26,7 +27,7 @@ while True:
         echo = False
     elif user_command == "echoOn":
         echo = True
-    elif user_command == "" or user_command == " ":
+    elif user_command == "":
         pass
     elif user_command == "rec create":
         recName_ = input("Enter Rec Name: ")
@@ -48,5 +49,24 @@ while True:
         pass
     elif user_command == "cd ..":
         print("system cannot find target")
+    elif user_command == "mkdir":
+        print("indevelopment kik")
+    elif user_command == "server help":
+        print("Simulates a server (fake server duh I don't know how to code)")
+        print("server start - Starts a fake server")
+        print("server stop - Stops a fake server")
+        print("server help - this page")
+    elif user_command == "server start":
+        serverName = input("Enter server name: ")
+        serverPort = input("Enter server port: ")
+        print("Now hosting server:", serverName,"\nOn port:", serverPort)
+    elif user_command == "server stop":
+        serverNameStop = input("Enter server name: ")
+        serverPortStop = input("Enter server port: ")
+        if serverNameStop == serverName and serverPortStop == serverPort:
+            print("closing server...")
+            time.sleep(2.5)
+        else:
+            print("cannot find entered server (name or port did not match)")
     else:
         print("Unknown Command:", user_command)

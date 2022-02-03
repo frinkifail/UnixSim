@@ -1,9 +1,3 @@
-"""
-oh my god
-frink this library (language!)
-I don't know how to code
-"""
-
 # catecoin lib
 
 
