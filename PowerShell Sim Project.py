@@ -73,7 +73,7 @@ def command_line():
 
 def main():
     while True:
-        commandLine()
+        command_line()
 
 if __name__ == "__main__":
     main()
