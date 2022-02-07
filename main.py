@@ -39,7 +39,7 @@ def command_line():
     elif commandLine == "rec view contents":
         rec.viewRecContent('content')
     elif commandLine == "test ctc":
-        # !CATECOIN LIBRARY #HERE
+        # CATECOIN LIBRARY HERE
         pass
     elif commandLine == "ls" or commandLine == "dir":
         print("DIRECTORY LIST:\nsys [system, dir]\nntpd.exe [app]\nwrdpd.exe [app]\nspaint.exe [sandbox, app]\n. [CURR DIR, system] (UnixSim32)\n.. [PREV DIR, system_const_protected] (???)")
