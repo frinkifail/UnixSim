@@ -10,10 +10,27 @@ def command_line():
     if commandLine == "exit":
         exit()
     elif commandLine == "about":
-        print("UnixSim v0.1.8-nightly\nMade by Frinkifail & contributors")
+        print("UnixSim v0.1.9-nightly\nMade by Frinkifail & contributors")
     elif commandLine == "help":
-        print("Avalible commands are:\nabout - about\nexit - exit\nhelp - help\necho - say word\nechoOff & echoOn - turn \"echo:\" prompt off/on\nrec create - create rec\nrec view names - view names of recs\nrec view contents - view contents of recs")
-        print("ls/dir - list fake (simulated) directory\ncd <directory name>- cycles through simulated directories\nserver - \"server help\" for more info")
+        # here we create dict with all command to sort them alphabetically
+        commands_list = {"about": "about UnixSim", "exit": "exit UnixSim", "help": "this command", "echo": "print text into console", "echoOff & echoOn": "turn \"echo:\" prompt off/on",
+        "rec create": "create recording", "rec view [names|contents]": "view names/contents of recordings", "ls/dir": "list files of fake (simulated) directory",
+        "cd <directory name>": "cycles through simulated directories", "server": "\"server help\" for more info", "joke": "tells unfunny joke"}
+
+        # find longest key to format properly
+        saved = 0
+        for i in commands_list.keys():
+            if len(i) > saved:
+                saved = len(i)
+        saved += 3
+
+        commands_strings = []
+        for a, b in commands_list.items():
+            commands_strings.append(a + " " * (saved - len(a)) + b)
+
+        commands_strings.sort()
+
+        print("Avalible commands are:\n\n" + "\n\n".join(commands_strings) + "\n")
     elif commandLine == "echo":
         if echo is True:
             echoMessage = input("echo:\n")
