@@ -56,6 +56,19 @@ def command_line():
         print("server start - Starts a fake server")
         print("server stop - Stops a fake server")
         print("server help - this page")
+    elif commandLine == "joke":
+        try:
+            import requests
+            response = requests.get("https://v2.jokeapi.dev/joke/Any")
+            joke = response.json()
+            if joke["type"] == "twopart":
+                print(joke["setup"])
+                time.sleep(3)
+                print(joke["delivery"])
+            elif joke["type"] == "single":
+                print(joke["joke"])
+        except:
+          print("Jokes api got an error, please try again later.")
     elif commandLine == "server start":
         serverName = input("Enter server name: ")
         serverPort = input("Enter server port: ")
