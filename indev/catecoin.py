@@ -11,11 +11,11 @@ priceHigh = random.uniform(priceLow, 2984.91)
 
 # functions
 def checkPrice():
-    global priceLow
-    global priceHigh
-    print(random.uniform(priceLow,priceHigh))
-    
+	global priceLow
+	global priceHigh
+	print(random.uniform(priceLow,priceHigh))
+	
 # main loop
 while True:
-    checkPrice()
-    time.sleep(0.85)
+	checkPrice()
+	time.sleep(0.85)
