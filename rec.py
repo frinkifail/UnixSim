@@ -3,7 +3,7 @@
 recNames = []
 recCodeContents = []
 
-def createRec(recType, recName):
+def createRec(recLinesINDEV, recName):
 	global recNames
 	global recCodeContents
 	recName_ = recName

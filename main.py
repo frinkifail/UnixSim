@@ -1,8 +1,18 @@
 import time
 import rec
+import os
 echo = True
 serverName = "not started"
 serverPort = "not started"
+setup_done = None
+try:
+	os.system("cd /")
+	os.system("C:")
+	os.system("cd PythonUnixSim")
+	os.system("cd UnixSim32")
+	setup_done = True
+except:
+	setup_done = False
 
 def command_line():
 	commandLinePrompt = "python/unixSim> "
@@ -10,12 +20,12 @@ def command_line():
 	if commandLine == "exit":
 		exit()
 	elif commandLine == "about":
-		print("UnixSim v0.1.9-nightly\nMade by Frinkifail & contributors")
+		print("UnixSim v0.2.0-nightly!!\nMade by Frinkifail & contributors\n0.2.0 is finally here!!")
 	elif commandLine == "help":
 		# here we create dict with all command to sort them alphabetically
 		commands_list = {"about": "about UnixSim", "exit": "exit UnixSim", "help": "this command", "echo": "print text into console", "echoOff & echoOn": "turn \"echo:\" prompt off/on",
-		"rec create": "create recording", "rec view [names|contents]": "view names/contents of recordings", "ls/dir": "list files of fake (simulated) directory",
-		"cd <directory name>": "cycles through simulated directories", "server": "\"server help\" for more info", "joke": "tells unfunny joke"}
+		"rec create": "create recording", "rec view [names|contents]": "view names/contents of recordings", "ls/dir": "list files of directory (C:/PythonUnixSim/UnixSim32)",
+		"cd <directory name>": "cycles through directories (C:/PythonUnixSim/UnixSim32)", "server": "\"server help\" for more info", "joke": "tells unfunny joke"}
 
 		# find longest key to format properly
 		saved = 0
@@ -59,20 +69,53 @@ def command_line():
 		# CATECOIN LIBRARY HERE
 		pass
 	elif commandLine == "ls" or commandLine == "dir":
-		print("DIRECTORY LIST:\nsys [system, dir]\nntpd.exe [app]\nwrdpd.exe [app]\nspaint.exe [sandbox, app]\n. [CURR DIR, system] (UnixSim32)\n.. [PREV DIR, system_const_protected] (???)")
+		if setup_done == True:
+			os.system("cd /")
+			os.system("C:")
+			os.system("cd PythonUnixSim")
+			os.system("cd UnixSim32")
+			os.system("dir")
+		elif setup_done == False:
+			print("run 'setup' command to show directory")	
 	elif commandLine == "cd sys":
-		print("this is a system directory it is not safe to play around!")
+		if setup_done == True:
+			os.system("cd sys")
+		elif setup_done == False:
+			print("run 'setup' command to change directory")	
 	elif commandLine == "cd .":
-		pass
+		os.system("cd .")
+		os.system("dir")
 	elif commandLine == "cd ..":
-		print("system cannot find target")
-	elif commandLine == "mkdir":
-		print("indevelopment kik")
+		os.system("cd ..")
+		os.system("dir")
+	elif commandLine.startswith("mkdir ") or commandLine.startswith("md "):
+		if setup_done == True:
+			try:
+				os.system("cd /")
+				os.system("C:")
+				os.system("cd PythonUnixSim")
+				os.system("cd UnixSim32")
+				os.system("mkdir "+str(commandLine[7:]))
+			except Exception as e:
+				print("An error occured while making this directory")
+				print("Error Code:",e)
+		elif setup_done == False:
+			print("run 'setup' command to make directory")
+	elif commandLine == "setup":
+		os.system("cd /")
+		os.system("C:")
+		os.system("mkdir PythonUnixSim")
+		os.system("cd PythonUnixSim")
+		os.system("mkdir UnixSim32")
+		os.system("cd UnixSim32")
+		os.system("mkdir sys")
+		print("Please put the files in assets/ to UnixSim32/")
 	elif commandLine == "server help":
-		print("Simulates a server (fake server duh I don't know how to code)")
+		print("Simulates a server")
 		print("server start - Starts a fake server")
 		print("server stop - Stops a fake server")
 		print("server help - this page")
+		print("test server start - starts a wip server")
 	elif commandLine == "joke":
 		try:
 			import requests
@@ -98,6 +141,15 @@ def command_line():
 			time.sleep(2.5)
 		else:
 			print("cannot find entered server (name or port did not match)")
+	elif commandLine == "test server start":
+		os.system("cd C:")
+		os.system("mkdir PythonUnixSim")
+		os.system("cd PythonUnixSim")
+		os.system("mkdir HTTPServer")
+		os.system("cd HTTPServer")
+		os.system("python3 -m http.server 1275")
+		print(r"Server Started in C:\PythonUnixSim\HTTPServer on localhost:1275")
+		print("you can put anything there (e.g. HTML Files)")
 	else:
 		print("Unknown Command:", commandLine)
 
