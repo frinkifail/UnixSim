@@ -1,6 +1,4 @@
-import time
-import rec
-import os
+import time, rec, os
 
 echo = True
 serverName = "not started"
@@ -15,15 +13,13 @@ try:
 except:
     setup_done = False
 
-
 def command_line():
-    commandLinePrompt = "python/unixSim> "
-    commandLine = input(commandLinePrompt)
+    commandLine = input("python/unixSim> ")
     if commandLine == "exit":
         exit()
     elif commandLine == "about":
         print(
-            "UnixSim v0.2.0-nightly!!\nMade by Frinkifail & contributors\n0.2.0 is finally here!!"
+            "UnixSim v0.2.1-nightly\nMade by Frinkifail & contributors"
         )
     elif commandLine == "help":
         # here we create dict with all command to sort them alphabetically
