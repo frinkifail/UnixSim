@@ -13,14 +13,13 @@ try:
 except:
     setup_done = False
 
+
 def command_line():
     commandLine = input("python/unixSim> ")
     if commandLine == "exit":
         exit()
     elif commandLine == "about":
-        print(
-            "UnixSim v0.2.1-nightly\nMade by Frinkifail & contributors"
-        )
+        print("UnixSim v0.2.1-nightly\nMade by Frinkifail & contributors")
     elif commandLine == "help":
         # here we create dict with all command to sort them alphabetically
         commands_list = {
