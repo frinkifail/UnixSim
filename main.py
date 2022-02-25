@@ -54,7 +54,7 @@ def command_line():
 
         commands_strings.sort()
 
-        print("Avalible commands are:\n\n" + "\n\n".join(commands_strings) + "\n")
+        print("Available commands are:\n\n" + "\n\n".join(commands_strings) + "\n")
     elif commandLine == "echo":
         if echo is True:
             echoMessage = input("echo:\n")
