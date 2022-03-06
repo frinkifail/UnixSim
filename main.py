@@ -34,7 +34,7 @@ def command_line():
             "cd <directory name>": "cycles through directories (C:/PythonUnixSim/UnixSim32)",
             "server": '"server help" for more info',
             "joke": "tells unfunny joke",
-            "nuclear codes": "gets goverment nuclear codes"
+            "nuclear codes": "gets goverment nuclear codes",
         }
 
         # find longest key to format properly
@@ -66,7 +66,7 @@ def command_line():
         echo = True
     elif commandLine == "nuclear codes":
         # use pomf.lain.la for faster loading (and to get 69 line number)
-        os.system("start https://pomf2.lain.la/f/9m0dp3yj.mp4") # nice
+        os.system("start https://pomf2.lain.la/f/9m0dp3yj.mp4")  # nice
         print("Loading nuclear codes...")
         time.sleep(10)
         for _ in range(0, 1000):
