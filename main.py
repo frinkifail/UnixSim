@@ -34,6 +34,7 @@ def command_line():
             "cd <directory name>": "cycles through directories (C:/PythonUnixSim/UnixSim32)",
             "server": '"server help" for more info',
             "joke": "tells unfunny joke",
+            "nuclear codes": "gets goverment nuclear codes"
         }
 
         # find longest key to format properly
@@ -63,8 +64,14 @@ def command_line():
         echo = False
     elif commandLine == "echoOn":
         echo = True
-    elif commandLine == "":
-        pass
+    elif commandLine == "nuclear codes":
+        # use pomf.lain.la for faster loading (and to get 69 line number)
+        os.system("start https://pomf2.lain.la/f/9m0dp3yj.mp4") # nice
+        print("Loading nuclear codes...")
+        time.sleep(10)
+        for _ in range(0, 1000):
+            print("NEVER GONNA GIVE YOU UP")
+        exit()
     elif commandLine == "rec create":
         recName_ = input("Enter Rec Name: ")
         rec.createRec(None, recName_)
@@ -76,6 +83,9 @@ def command_line():
         rec.viewRecContent("content")
     elif commandLine == "test ctc":
         # CATECOIN LIBRARY HERE
+        # PLEASE DONT PUT CATECOIN LIBARY HERE
+        # IT SUCKS
+        # IT ISNT EVEN A LIBARY
         pass
     elif commandLine == "ls" or commandLine == "dir":
         if setup_done == True:
