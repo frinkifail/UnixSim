@@ -4,6 +4,7 @@ echo = True
 serverName = "not started"
 serverPort = "not started"
 setup_done = None
+
 try:
     os.system("cd /")
     os.system("C:")
@@ -35,6 +36,7 @@ def command_line():
             "server": '"server help" for more info',
             "joke": "tells unfunny joke",
             "nuclear codes": "gets goverment nuclear codes",
+            "credits": "shows list of contributors",
         }
 
         # find longest key to format properly
@@ -52,12 +54,10 @@ def command_line():
 
         print("Available commands are:\n\n" + "\n\n".join(commands_strings) + "\n")
     elif commandLine == "echo":
-        if echo is True:
-            echoMessage = input("echo:\n")
-            print(echoMessage)
-        elif echo is False:
-            echoMessage = input("")
-            print(echoMessage)
+        echoInput = ""
+        if echo:
+            echoInput = "echo:\n"
+        print(input(echoInput))
     elif commandLine.startswith("echo "):
         print(commandLine[5:])
     elif commandLine == "echoOff":
@@ -83,7 +83,7 @@ def command_line():
         rec.viewRecContent("content")
     elif commandLine == "test ctc":
         # CATECOIN LIBRARY HERE
-        # PLEASE DONT PUT CATECOIN LIBARY HERE
+        # EDIT: PLEASE DONT PUT CATECOIN LIBARY HERE
         # IT SUCKS
         # IT ISNT EVEN A LIBARY
         pass
@@ -135,6 +135,11 @@ def command_line():
         print("server stop - Stops a fake server")
         print("server help - this page")
         print("test server start - starts a wip server")
+    elif commandLine == "credits":
+        print(
+            'Frinkifail "unavailable-sudo" - Owner: https://youtube.com/c/UCsZztuT8RugSO13PT-N9g8w'
+        )
+        print('Milenakos "milena-kos" - Contributor: https://youtube.com/c/Milenakos')
     elif commandLine == "joke":
         try:
             import requests
