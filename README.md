@@ -1,4 +1,5 @@
 # UnixSim
+## WHY THE FRICK DOES THIS EXIST
 ## sub to Frinkifail on youtube or don't download this repo
 guys go check out my [website](https://frinkifail.wixsite.com/unixsim)
 
