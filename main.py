@@ -6,17 +6,14 @@ serverPort = "not started"
 setup_done = None
 
 try:
-    os.system("cd /")
     os.system("C:")
-    os.system("cd PythonUnixSim")
-    os.system("cd UnixSim32")
+    os.system("cd PythonUnixSim/UnixSim32")
     setup_done = True
 except:
     setup_done = False
 
 
-def command_line():
-    commandLine = input("python/unixSim> ")
+def command_line(commandLine):
     if commandLine == "exit":
         exit()
     elif commandLine == "about":
@@ -81,18 +78,10 @@ def command_line():
         rec.viewRecContent("name")
     elif commandLine == "rec view contents":
         rec.viewRecContent("content")
-    elif commandLine == "test ctc":
-        # CATECOIN LIBRARY HERE
-        # EDIT: PLEASE DONT PUT CATECOIN LIBARY HERE
-        # IT SUCKS
-        # IT ISNT EVEN A LIBARY
-        pass
     elif commandLine == "ls" or commandLine == "dir":
         if setup_done == True:
-            os.system("cd /")
             os.system("C:")
-            os.system("cd PythonUnixSim")
-            os.system("cd UnixSim32")
+            os.system("cd PythonUnixSim/UnixSim32")
             os.system("dir")
         elif setup_done == False:
             print("run 'setup' command to show directory")
@@ -110,10 +99,8 @@ def command_line():
     elif commandLine.startswith("mkdir ") or commandLine.startswith("md "):
         if setup_done == True:
             try:
-                os.system("cd /")
                 os.system("C:")
-                os.system("cd PythonUnixSim")
-                os.system("cd UnixSim32")
+                os.system("cd PythonUnixSim/UnixSim32")
                 os.system("mkdir " + str(commandLine[7:]))
             except Exception as e:
                 print("An error occured while making this directory")
@@ -121,7 +108,6 @@ def command_line():
         elif setup_done == False:
             print("run 'setup' command to make directory")
     elif commandLine == "setup":
-        os.system("cd /")
         os.system("C:")
         os.system("mkdir PythonUnixSim")
         os.system("cd PythonUnixSim")
@@ -181,7 +167,8 @@ def command_line():
 
 def main():
     while True:
-        command_line()
+        commandLine = input("python/unixSim> ")
+        command_line(commandLine)
 
 
 if __name__ == "__main__":
